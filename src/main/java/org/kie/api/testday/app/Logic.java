@@ -2,7 +2,6 @@ package org.kie.api.testday.app;
 
 import java.util.List;
 
-import org.kie.api.KieServices;
 import org.kie.api.runtime.KieSession;
 import org.kie.api.runtime.StatelessKieSession;
 import org.kie.api.runtime.rule.EntryPoint;
@@ -16,15 +15,15 @@ public class Logic {
     private static Logger LOG = LoggerFactory.getLogger(Logic.class);
 
     KieSession session;
-
     FactHandle motionFactHandle;
 
+
     public void prepareKieSession() {
-        session = KieServices.Factory.get().getKieClasspathContainer().newKieSession();
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public StatelessKieSession getStatelessSession() {
-        return KieServices.Factory.get().getKieClasspathContainer().newStatelessKieSession();
+        throw new UnsupportedOperationException("Not implemented yet");
 
     }
 
@@ -34,42 +33,15 @@ public class Logic {
      * @return number of fired rules.
      */
     public int optimizeLightConditionsInKitchen(Room kitchen) {
-
-        prepareKieSession();
-
-        session.insert(kitchen);
-        session.insert(kitchen.getLight());
-        session.insert(kitchen.getLightSensor());
-        session.insert(kitchen.getJalousie());
-
-        int rulesFired = session.fireAllRules();
-
-        session.dispose();
-        return rulesFired;
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public EntryPoint watchActivity(Room room) throws InterruptedException {
-
-        prepareKieSession();
-
-        EntryPoint motionEP = session.getEntryPoint("motion");
-        motionEP.insert(room);
-        motionEP.insert(room.getLight());
-        motionFactHandle = motionEP.insert(room.getMotionSensor());
-
-        new Thread(new Runnable() {
-            public void run() {
-                session.fireUntilHalt();
-                session.dispose();
-            }
-        }).start();
-
-        return motionEP;
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public void emergency(List<Room> rooms) {
-        StatelessKieSession sSession = getStatelessSession();
-        sSession.execute(rooms);
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 
 
