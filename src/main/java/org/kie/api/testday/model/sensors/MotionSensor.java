@@ -1,12 +1,14 @@
 package org.kie.api.testday.model.sensors;
 
-import java.util.Random;
-
 public class MotionSensor {
 
-    private Random rand = new Random(System.currentTimeMillis());
+    boolean motionDetected = false;
 
     public boolean isMotionDetected() {
-        return rand.nextBoolean();
+        return motionDetected;
+    }
+
+    public void setMotionDetected(boolean motionDetected) {
+        this.motionDetected = motionDetected;
     }
 }

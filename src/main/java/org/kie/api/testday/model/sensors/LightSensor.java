@@ -5,7 +5,7 @@ import java.util.Random;
 public class LightSensor {
 
 
-    private int value = 75;
+    private int value = 5;
     private int jitter = 10;             //how maximally can next value differ
     private Random rand = new Random(System.currentTimeMillis());
 
@@ -14,13 +14,23 @@ public class LightSensor {
      */
 
     public int getValue() {
-        value = value + (rand.nextInt(jitter * 2) - jitter);
-        if (value < 0) {
-            value = 0;
-        } else if (value > 100) {
-            value = 100;
-        }
         return value;
     }
 
+    /**
+     * only for testing purposes
+     * @param value
+     */
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("LightSensor{");
+        sb.append("value=").append(value);
+        sb.append('}');
+        return sb.toString();
+    }
 }

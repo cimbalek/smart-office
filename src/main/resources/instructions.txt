@@ -1,0 +1,12 @@
+Possible tasks and rules:
+
+    1.) Prepapre method to populate "session" field
+
+    2.) Maintain reasonable light conditions in the kitchen. You want to see where the ball is in your foosball.
+        - >85% is direct sunshine. Close the jalousie. Eg. to current light - 10. (sensor ~ jalousie: 95% ~ 85%, 90% ~ 80%...)
+        - 40% - 85% is fine, open jalousie.
+        - 20% - 40% is dusk. Full light should be OK.
+        - 0% - 20% is dark. But when full dark, too much light is inconvenient. Make it range from 60% to 100% depending on the light conditions.
+    3.) Turn the light on when someone enters the room (MotionSesor detects motion) (fierUntilHalt();)
+    4.) Imagine case of emergency. Create rule used in stateless session, which will turn off all the appliances in all rooms.
+        - try to define this session in kmodule.xml

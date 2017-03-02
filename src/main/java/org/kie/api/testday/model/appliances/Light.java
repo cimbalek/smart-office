@@ -25,16 +25,18 @@ public class Light extends AbstractAppliance {
      * @param brightness brightness in percents (between 1 and 100% inclusive). If out of boundaries min/max value is used.
      */
     public void setBrightness(int brightness) {
-        if ((brightness < 1) && (brightness > 100)) {
-            this.brightness = 1;
+        if (brightness < 1) {
+            this.brightness = 0;
             turnOff();
         } else if (brightness > 100) {
             this.brightness = 100;
             turnOn();
         } else {
             this.brightness = brightness;
+            turnOn();
         }
     }
+
 
     @Override
     public boolean equals(Object o) {

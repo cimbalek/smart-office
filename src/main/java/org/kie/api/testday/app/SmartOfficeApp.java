@@ -3,9 +3,8 @@ package org.kie.api.testday.app;
 public class SmartOfficeApp {
     public static void main(String args[]) {
         /* START - DO NOT EDIT PART!! */
-        doLogHeader();
+        //doLogHeader();
         /* END - DO NOT EDIT PART!! */
-
 
     }
 
